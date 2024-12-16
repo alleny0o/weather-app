@@ -1,13 +1,12 @@
 require("dotenv").config({
-  path: require("path").resolve(__dirname, "../.env"),
 });
 
 const express = require("express");
 const cookieParser = require("cookie-parser");
-const signupRoute = require("./routes/signup");
-const loginRoute = require("./routes/login");
-const globalRateLimiter = require("./middleware/globalRateLimiter");
-const bookmarksRoute = require('./routes/bookmarks');
+const signupRoute = require("../src/routes/signup");
+const loginRoute = require("../src/routes/login");
+const globalRateLimiter = require("../src/middleware/globalRateLimiter");
+const bookmarksRoute = require('../src/routes/bookmarks');
 const cors = require("cors");
 
 // mongoose
