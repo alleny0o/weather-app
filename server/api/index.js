@@ -42,6 +42,10 @@ app.use("/api", globalRateLimiter);
 // Bookmark Routes
 app.use("/api/bookmarks", bookmarksRoute);
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+})
+
 // Weather API Endpoint
 app.post("/api/weather", async (req, res) => {
   try {
