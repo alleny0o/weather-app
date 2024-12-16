@@ -24,7 +24,7 @@ const Home = () => {
     setWeather(null);
 
     try {
-      const response = await fetch('http://localhost:5000/api/weather', {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/weather`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ const Home = () => {
 
       // Check if city is bookmarked
       if (token) {
-        const bookmarkResponse = await fetch('http://localhost:5000/api/bookmarks', {
+        const bookmarkResponse = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/bookmarks`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -71,7 +71,7 @@ const Home = () => {
     }
 
     try {
-      const url = `http://localhost:5000/api/bookmarks/${bookmarked ? 'remove' : 'add'}`;
+      const url = `${process.env.REACT_APP_BACKEND_URL}/api/bookmarks/${bookmarked ? 'remove' : 'add'}`;
       const response = await fetch(url, {
         method: 'POST',
         headers: {

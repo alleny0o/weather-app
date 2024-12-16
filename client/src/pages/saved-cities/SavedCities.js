@@ -16,7 +16,7 @@ const SavedCities = () => {
       }
 
       try {
-        const response = await fetch('http://localhost:5000/api/bookmarks', {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/bookmarks`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,
